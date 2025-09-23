@@ -8,49 +8,80 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #fceabb, #f8b500);
+      background: #f5f5f5;
       color: #333;
     }
     header {
-      background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+      background: linear-gradient(90deg, #6a11cb, #2575fc);
       padding: 15px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-    header h1 { font-size: 1.5rem; color: #fff; }
+    header h1 { 
+      font-size: 2rem; 
+      color: #fff; 
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
     nav a {
       margin: 0 12px;
       text-decoration: none;
       color: #fff;
       font-weight: 500;
+      transition: 0.3s;
     }
+    nav a:hover { color: #ffea00; }
     .hero {
       text-align: center;
-      padding: 80px 20px;
-      background: url('banner-placeholder.jpg') center/cover no-repeat; /* 👉 Replace this with your banner */
+      padding: 100px 20px 60px 20px;
+      background: linear-gradient(135deg, #2193b0, #6a11cb, #2575fc);
       color: #fff;
     }
-    .hero h2 { font-size: 3rem; margin-bottom: 10px; }
-    .hero p { font-size: 1.3rem; }
+    .hero h2 { font-size: 3rem; margin-bottom: 10px; font-weight: 700; }
+    .hero p { font-size: 1.2rem; margin-bottom: 15px; }
+    .hero small { font-size: 1rem; display: block; margin-top: 10px; color: #e0e0e0; }
+
+    .qualities {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .quality-card {
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      padding: 25px;
+      border-radius: 15px;
+      color: #fff;
+      font-weight: 500;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .quality-card:hover { transform: translateY(-8px); }
+    .quality-card span { font-size: 2rem; display: block; margin-bottom: 10px; }
+
     .offer {
       text-align: center;
       background: #ffefba;
-      padding: 12px;
+      padding: 18px;
       font-weight: bold;
       color: #d35400;
+      margin: 30px 0;
+      font-size: 1.2rem;
     }
+
     .products {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
-      padding: 40px;
+      padding: 40px 20px;
     }
     .card {
       background: #fff;
       border-radius: 12px;
-      padding: 20px;
+      padding: 15px;
       text-align: center;
       box-shadow: 0 6px 15px rgba(0,0,0,0.1);
       transition: transform 0.3s;
@@ -63,11 +94,11 @@
       border-radius: 10px;
       margin-bottom: 12px;
     }
-    .card h3 { margin: 10px 0; color: #7f00ff; }
+    .card h3 { margin: 10px 0; color: #6a11cb; font-size: 1.1rem; }
     .card p { font-size: 0.9rem; margin: 6px 0; }
-    .card .price { font-size: 1.1rem; font-weight: bold; margin: 8px 0; }
+    .card .price { font-size: 1rem; font-weight: bold; margin: 8px 0; color: #2575fc; }
     button {
-      background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+      background: linear-gradient(90deg, #6a11cb, #2575fc);
       border: none;
       padding: 10px 20px;
       border-radius: 25px;
@@ -99,60 +130,120 @@
   </header>
 
   <section class="hero">
-    <h2>Unleash Your Creativity</h2>
-    <p>Premium art supplies for every artist</p>
+    <h2>Gouache Art Supplies</h2>
+    <p>Unleash Your Creativity with Premium Art Essentials</p>
+    <small>From vibrant gouache paints to professional brushes and deluxe sets, Gouache is your trusted companion for every artistic journey.</small>
+  </section>
+
+  <section class="qualities">
+    <div class="quality-card">
+      <span>🎨</span>
+      High-quality pigments & smooth texture
+    </div>
+    <div class="quality-card">
+      <span>🌱</span>
+      Eco-friendly & safe for all ages
+    </div>
+    <div class="quality-card">
+      <span>🖌️</span>
+      Professional brushes for perfect strokes
+    </div>
+    <div class="quality-card">
+      <span>💼</span>
+      Wide range from beginner kits to pro sets
+    </div>
+    <div class="quality-card">
+      <span>⭐</span>
+      Trusted by artists worldwide
+    </div>
   </section>
 
   <div class="offer">✨ Festive Offer: Flat 20% OFF on All Art Supplies – Limited Time Only! ✨</div>
 
   <section class="products" id="products">
-    <!-- 👉 Replace "placeholder.jpg" with your product images -->
     <div class="card">
-      <img src="paintset.jpg" alt="Paint Set">
-      <h3>Gouache Paint Set</h3>
-      <p>Rich colors for bold creations</p>
+      <img src="placeholder.jpg" alt="Gouache 12-Color Set">
+      <h3>Gouache 12-Color Set</h3>
+      <p>Perfect starter set for beginners</p>
       <div class="price">₹499</div>
-      <button onclick="buyProduct('Gouache Paint Set','₹499','paintset.jpg')">Buy Now</button>
+      <button onclick="buyProduct('Gouache 12-Color Set','₹499','placeholder.jpg')">Buy Now</button>
     </div>
-
     <div class="card">
-      <img src="brushes.jpg" alt="Brushes">
-      <h3>Professional Brushes</h3>
-      <p>Smooth strokes every time</p>
+      <img src="placeholder.jpg" alt="Gouache 24-Color Set">
+      <h3>Gouache 24-Color Set</h3>
+      <p>Rich colors for your creations</p>
+      <div class="price">₹899</div>
+      <button onclick="buyProduct('Gouache 24-Color Set','₹899','placeholder.jpg')">Buy Now</button>
+    </div>
+    <div class="card">
+      <img src="placeholder.jpg" alt="Gouache 50-Color Set">
+      <h3>Gouache 50-Color Set</h3>
+      <p>Ultimate palette for artists</p>
+      <div class="price">₹1999</div>
+      <button onclick="buyProduct('Gouache 50-Color Set','₹1999','placeholder.jpg')">Buy Now</button>
+    </div>
+    <div class="card">
+      <img src="placeholder.jpg" alt="Premium Brush Set (10 pcs)">
+      <h3>Premium Brush Set (10 pcs)</h3>
+      <p>Soft & precise brushes</p>
       <div class="price">₹999</div>
-      <button onclick="buyProduct('Professional Brushes','₹999','brushes.jpg')">Buy Now</button>
+      <button onclick="buyProduct('Premium Brush Set (10 pcs)','₹999','placeholder.jpg')">Buy Now</button>
     </div>
-
     <div class="card">
-      <img src="watercolors.jpg" alt="Watercolors">
-      <h3>Watercolors</h3>
-      <p>Blend, wash & explore shades</p>
+      <img src="placeholder.jpg" alt="Watercolor Tubes (18 pcs)">
+      <h3>Watercolor Tubes (18 pcs)</h3>
+      <p>Blend & explore shades</p>
       <div class="price">₹699</div>
-      <button onclick="buyProduct('Watercolors','₹699','watercolors.jpg')">Buy Now</button>
+      <button onclick="buyProduct('Watercolor Tubes (18 pcs)','₹699','placeholder.jpg')">Buy Now</button>
     </div>
-
     <div class="card">
-      <img src="brushpens.jpg" alt="Brush Pens">
-      <h3>Brush Pens</h3>
-      <p>Perfect for calligraphy & art</p>
-      <div class="price">₹799</div>
-      <button onclick="buyProduct('Brush Pens','₹799','brushpens.jpg')">Buy Now</button>
+      <img src="placeholder.jpg" alt="Deluxe Art Combo Kit">
+      <h3>Deluxe Art Combo Kit</h3>
+      <p>All-in-one kit for artists</p>
+      <div class="price">₹2499</div>
+      <button onclick="buyProduct('Deluxe Art Combo Kit','₹2499','placeholder.jpg')">Buy Now</button>
     </div>
-
     <div class="card">
-      <img src="sketchpens.jpg" alt="Sketch Pens">
-      <h3>Sketch Pens</h3>
-      <p>Vibrant shades for every sketch</p>
+      <img src="placeholder.jpg" alt="Sketch Pens (48 pcs)">
+      <h3>Sketch Pens (48 pcs)</h3>
+      <p>Vibrant shades for sketches</p>
       <div class="price">₹349</div>
-      <button onclick="buyProduct('Sketch Pens','₹349','sketchpens.jpg')">Buy Now</button>
+      <button onclick="buyProduct('Sketch Pens (48 pcs)','₹349','placeholder.jpg')">Buy Now</button>
     </div>
-
     <div class="card">
-      <img src="fineliners.jpg" alt="Fine Liners">
-      <h3>Fine Liners</h3>
-      <p>Precision for detailed artwork</p>
+      <img src="placeholder.jpg" alt="Brush Pens (24 pcs)">
+      <h3>Brush Pens (24 pcs)</h3>
+      <p>Ideal for calligraphy & art</p>
+      <div class="price">₹799</div>
+      <button onclick="buyProduct('Brush Pens (24 pcs)','₹799','placeholder.jpg')">Buy Now</button>
+    </div>
+    <div class="card">
+      <img src="placeholder.jpg" alt="Fine Liners (12 pcs)">
+      <h3>Fine Liners (12 pcs)</h3>
+      <p>Precision for detailed work</p>
       <div class="price">₹599</div>
-      <button onclick="buyProduct('Fine Liners','₹599','fineliners.jpg')">Buy Now</button>
+      <button onclick="buyProduct('Fine Liners (12 pcs)','₹599','placeholder.jpg')">Buy Now</button>
+    </div>
+    <div class="card">
+      <img src="placeholder.jpg" alt="Artist’s Wooden Palette">
+      <h3>Artist’s Wooden Palette</h3>
+      <p>Classic wooden palette</p>
+      <div class="price">₹299</div>
+      <button onclick="buyProduct('Artist’s Wooden Palette','₹299','placeholder.jpg')">Buy Now</button>
+    </div>
+    <div class="card">
+      <img src="placeholder.jpg" alt="Canvas Boards (Set of 5)">
+      <h3>Canvas Boards (Set of 5)</h3>
+      <p>High-quality canvases for painting</p>
+      <div class="price">₹799</div>
+      <button onclick="buyProduct('Canvas Boards (Set of 5)','₹799','placeholder.jpg')">Buy Now</button>
+    </div>
+    <div class="card">
+      <img src="placeholder.jpg" alt="Professional Art Journal">
+      <h3>Professional Art Journal</h3>
+      <p>Sketch, draw & plan your art</p>
+      <div class="price">₹499</div>
+      <button onclick="buyProduct('Professional Art Journal','₹499','placeholder.jpg')">Buy Now</button>
     </div>
   </section>
 
@@ -174,3 +265,4 @@
   </script>
 </body>
 </html>
+
