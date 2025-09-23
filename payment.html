@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment - Gouache Art Supplies</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #89f7fe, #66a6ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #333;
+    }
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+      width: 90%;
+      max-width: 450px;
+    }
+    h2 { text-align: center; margin-bottom: 20px; color: #004d99; }
+    label { display: block; margin-top: 12px; font-weight: 500; }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    small { color: #777; display: block; margin-top: 8px; }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 25px;
+      background: linear-gradient(90deg, #66a6ff, #89f7fe);
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    button:hover { opacity: 0.9; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Payment Details</h2>
+    <form id="paymentForm">
+      <label>Card Number</label>
+      <input type="text" maxlength="16" required>
+      <label>Expiry Date</label>
+      <input type="text" placeholder="MM/YY" required>
+      <label>CVV</label>
+      <input type="password" maxlength="3" required>
+      <small>⚠ This is a demo payment form. Do not enter real card details.</small>
+      <button type="submit">Proceed to Pay</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("paymentForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      window.location.href = "thankyou.html";
+    });
+  </script>
+</body>
+</html>
