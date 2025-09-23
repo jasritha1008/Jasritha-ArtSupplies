@@ -13,32 +13,19 @@
     }
 
     header {
-      background: linear-gradient(90deg, #6a11cb, #2575fc);
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    /* Shop name gradient */
-header h1 {
   background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb, #1dd1a1, #5f27cd);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* Navigation links gradient */
+/* Keep text white */
+header h1,
 header nav a {
-  background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb, #1dd1a1, #5f27cd);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 600;
-  transition: 0.3s;
+  color: #fff;
 }
-header nav a:hover {
-  opacity: 0.8; /* subtle effect on hover */
-}
-
     /* Hero Section */
     .hero {
       text-align: center;
