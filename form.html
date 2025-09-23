@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Form - Gouache Art Supplies</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fad0c4, #ffd1ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #333;
+    }
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+      width: 90%;
+      max-width: 500px;
+    }
+    h2 { text-align: center; margin-bottom: 20px; color: #6a1b9a; }
+    .product-preview {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .product-preview img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    label { display: block; margin-top: 12px; font-weight: 500; }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 25px;
+      background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    button:hover { opacity: 0.9; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Customer Details</h2>
+    <div class="product-preview" id="productPreview"></div>
+    <form id="orderForm">
+      <label>Full Name</label>
+      <input type="text" id="name" required>
+      <label>Email</label>
+      <input type="email" id="email" required>
+      <label>Address</label>
+      <textarea id="address" rows="3" required></textarea>
+      <button type="submit">Proceed to Payment</button>
+    </form>
+  </div>
+
+  <script>
+    // Load product from localStorage
+    const product = JSON.parse(localStorage.getItem("product"));
+    if (product) {
+      document.getElementById("productPreview").innerHTML = `
+        <img src="${product.img}" alt="${product.name}">
+        <h3>${product.name}</h3>
+        <p>Price: ${product.price}</p>
+      `;
+    }
+
+    document.getElementById("orderForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const user = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        address: document.getElementById("address").value
+      };
+      localStorage.setItem("user", JSON.stringify(user));
+      window.location.href = "payment.html";
+    });
+  </script>
+</body>
+</html>
