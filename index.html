@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gouache Art Supplies</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fceabb, #f8b500);
+      color: #333;
+    }
+    header {
+      background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    header h1 { font-size: 1.5rem; color: #fff; }
+    nav a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+    }
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: url('banner-placeholder.jpg') center/cover no-repeat; /* 👉 Replace this with your banner */
+      color: #fff;
+    }
+    .hero h2 { font-size: 3rem; margin-bottom: 10px; }
+    .hero p { font-size: 1.3rem; }
+    .offer {
+      text-align: center;
+      background: #ffefba;
+      padding: 12px;
+      font-weight: bold;
+      color: #d35400;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .card:hover { transform: translateY(-8px); }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 12px;
+    }
+    .card h3 { margin: 10px 0; color: #7f00ff; }
+    .card p { font-size: 0.9rem; margin: 6px 0; }
+    .card .price { font-size: 1.1rem; font-weight: bold; margin: 8px 0; }
+    button {
+      background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover { opacity: 0.9; }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #333;
+      color: #fff;
+      margin-top: 30px;
+    }
+    footer a { color: #fff; margin: 0 10px; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Gouache Art Supplies</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#products">Products</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Unleash Your Creativity</h2>
+    <p>Premium art supplies for every artist</p>
+  </section>
+
+  <div class="offer">✨ Festive Offer: Flat 20% OFF on All Art Supplies – Limited Time Only! ✨</div>
+
+  <section class="products" id="products">
+    <!-- 👉 Replace "placeholder.jpg" with your product images -->
+    <div class="card">
+      <img src="paintset.jpg" alt="Paint Set">
+      <h3>Gouache Paint Set</h3>
+      <p>Rich colors for bold creations</p>
+      <div class="price">₹499</div>
+      <button onclick="buyProduct('Gouache Paint Set','₹499','paintset.jpg')">Buy Now</button>
+    </div>
+
+    <div class="card">
+      <img src="brushes.jpg" alt="Brushes">
+      <h3>Professional Brushes</h3>
+      <p>Smooth strokes every time</p>
+      <div class="price">₹999</div>
+      <button onclick="buyProduct('Professional Brushes','₹999','brushes.jpg')">Buy Now</button>
+    </div>
+
+    <div class="card">
+      <img src="watercolors.jpg" alt="Watercolors">
+      <h3>Watercolors</h3>
+      <p>Blend, wash & explore shades</p>
+      <div class="price">₹699</div>
+      <button onclick="buyProduct('Watercolors','₹699','watercolors.jpg')">Buy Now</button>
+    </div>
+
+    <div class="card">
+      <img src="brushpens.jpg" alt="Brush Pens">
+      <h3>Brush Pens</h3>
+      <p>Perfect for calligraphy & art</p>
+      <div class="price">₹799</div>
+      <button onclick="buyProduct('Brush Pens','₹799','brushpens.jpg')">Buy Now</button>
+    </div>
+
+    <div class="card">
+      <img src="sketchpens.jpg" alt="Sketch Pens">
+      <h3>Sketch Pens</h3>
+      <p>Vibrant shades for every sketch</p>
+      <div class="price">₹349</div>
+      <button onclick="buyProduct('Sketch Pens','₹349','sketchpens.jpg')">Buy Now</button>
+    </div>
+
+    <div class="card">
+      <img src="fineliners.jpg" alt="Fine Liners">
+      <h3>Fine Liners</h3>
+      <p>Precision for detailed artwork</p>
+      <div class="price">₹599</div>
+      <button onclick="buyProduct('Fine Liners','₹599','fineliners.jpg')">Buy Now</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>Follow us: 
+      <a href="#">Instagram</a> | 
+      <a href="#">Facebook</a> | 
+      <a href="#">Pinterest</a>
+    </p>
+    <p>Contact: hello@gouache.com | +91 98765 43210</p>
+    <p>© 2025 Gouache Art Supplies. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    function buyProduct(name, price, img) {
+      localStorage.setItem("product", JSON.stringify({name, price, img}));
+      window.location.href = "form.html";
+    }
+  </script>
+</body>
+</html>
